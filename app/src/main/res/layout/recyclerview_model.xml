@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp"
+    android:layout_margin="15dp"
+    android:foreground="?selectableItemBackground"
+    android:clickable="true">
+    
+    <LinearLayout
+        android:id="@+id/layoutTaskCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#FF0000FF"
+            android:layout_weight="0.02"/>
+
+        <LinearLayout
+            android:id="@+id/layoutTaskDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="5dp"
+            app:layout_constraintEnd_toStartOf="@+id/layoutTaskButtons"
+            android:gravity="center_vertical"
+            android:layout_weight="0.68">
+
+            <TextView
+                android:id="@+id/taskTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DW Weekly Meeting"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/taskTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="13:30 - 14:00"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/taskTag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="#tasktag"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutTaskButtons"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="5dp"
+            app:layout_constraintStart_toEndOf="@+id/layoutTaskDescription"
+            android:layout_weight="0.3">
+
+            <Button
+                android:id="@+id/btnStart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
