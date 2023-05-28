@@ -6,7 +6,8 @@ import androidx.cardview.widget.CardView
 data class DayData(val date: String, val events: List<EventDetails>){
     data class EventDetails(
         val taskTitle: String,
-        val taskTime: String,
+        val taskTimeStart: String,
+        val taskTimeEnd: String,
         val taskTag: String
     )
 }

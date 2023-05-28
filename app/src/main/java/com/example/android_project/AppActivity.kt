@@ -38,6 +38,7 @@ class AppActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        // Walk through app fragments
         navView.setNavigationItemSelectedListener {
             it.isChecked = true
 
@@ -61,8 +62,8 @@ class AppActivity : AppCompatActivity() {
             true
         }
 
+        // Set TagsFragment as the default fragment
         if (savedInstanceState == null) {
-            // Set TagsFragment as the default fragment
             replaceFragment(TagsFragment(), "Tags")
             navView.setCheckedItem(R.id.nav_tags)
         }

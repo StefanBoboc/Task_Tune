@@ -35,7 +35,7 @@ class RecyclerViewAdapter(private val dayList: List<DayData>): RecyclerView.Adap
                 taskTitle.text = eventView.taskTitle
 
                 val taskTime = cardView.findViewById<TextView>(R.id.taskTime)
-                taskTime.text = eventView.taskTime
+                taskTime.text = eventView.taskTimeStart + " - " + eventView.taskTimeEnd
 
                 val taskTag = cardView.findViewById<TextView>(R.id.taskTag)
                 taskTag.text = eventView.taskTag
@@ -61,7 +61,7 @@ class RecyclerViewAdapter(private val dayList: List<DayData>): RecyclerView.Adap
     override fun getItemCount() = dayList.size
 
     fun getPositionForDate(date: Calendar): Int {
-        val dateFormat = SimpleDateFormat("dd MMM EEE", Locale.ENGLISH)
+        val dateFormat = SimpleDateFormat("dd MMM - EEE", Locale.ENGLISH)
         val targetDate = dateFormat.format(date.time)
 
         for (i in 0 until dayList.size) {

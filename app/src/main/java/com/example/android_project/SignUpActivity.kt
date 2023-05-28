@@ -46,37 +46,35 @@ class SignUpActivity : AppCompatActivity() {
                     if (it.isSuccessful) {
                         // account was created successfully
                         val databaseRef = database.reference.child("users").child(auth.currentUser!!.uid)
-                        val usersRef = database.reference.child("users")
-                        var numUsers: Long = 0
+                        val reference = database.getReference("users")
 
-                        usersRef.addValueEventListener(object : ValueEventListener {
+                        reference.addListenerForSingleValueEvent(object : ValueEventListener {
                             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                                // Get the number of users
-                                numUsers = dataSnapshot.childrenCount
-                                // Do something with the number of users
-                                // For example, log the value
-                                Log.d("UserCount", "Number of users: $numUsers")
+                                val numUsers = dataSnapshot.childrenCount
+                                println("Number of users: $numUsers")
+
+                                val a = numUsers.toInt() + 1
+                                println("Number of users: $a")
+                                val numUsersPadd = a.toString().padStart(10, '0')
+                                println("Number of users: $numUsersPadd")
+                                val users: Users = Users(numUsersPadd, email, auth.currentUser!!.uid)
+
+                                databaseRef.setValue(users).addOnCompleteListener {
+                                    if (it.isSuccessful) {
+                                        // auth.signOut()
+                                        Toast.makeText(this@SignUpActivity, "Account created successfully!", Toast.LENGTH_SHORT).show()
+                                        val intent = Intent(this@SignUpActivity, SignInActivity::class.java)
+                                        startActivity(intent)
+                                    } else {
+                                        Toast.makeText(this@SignUpActivity, "Failed to create account", Toast.LENGTH_SHORT).show()
+                                    }
+                                }
                             }
 
-                            override fun onCancelled(error: DatabaseError) {
-                                // Handle any errors that may occur
-                                Log.e("FirebaseError", "Failed to read value: ${error.message}")
+                            override fun onCancelled(databaseError: DatabaseError) {
+                                println("Failed to read value: ${databaseError.message}")
                             }
                         })
-
-                        val numUsersPadd = "%0${10}d".format((numUsers+1).toInt())
-                        val users : Users = Users(numUsersPadd, email, auth.currentUser!!.uid)
-
-                        databaseRef.setValue(users).addOnCompleteListener {
-                            if (it.isSuccessful) {
-                                //auth.signOut()
-                                Toast.makeText(this, "Account created successfully!", Toast.LENGTH_SHORT).show()
-                                var intent = Intent(this, SignInActivity::class.java)
-                                startActivity(intent)
-                            } else {
-                                Toast.makeText(this, "A crapat aici", Toast.LENGTH_SHORT).show()
-                            }
-                        }
                     }
                 }.addOnFailureListener { ex ->
                     // account was not created

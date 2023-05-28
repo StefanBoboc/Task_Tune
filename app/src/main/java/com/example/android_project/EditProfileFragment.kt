@@ -69,14 +69,6 @@ class EditProfileFragment : Fragment() {
             // Use the user data as needed
             usernameVal = userTest.username.toString()
             photoUrlVal = userTest.photoUrl.toString()
-//            val userName = userTest.username
-//            val userEmail = userTest.email
-//            val userId = userTest.uid
-//            Log.e(tag, "AAAA "+ userName)
-//            Log.e(tag, "AAAA "+ userEmail)
-//            Log.e(tag, "AAAA "+ userId)
-            Log.e(tag, "AAAA "+ photoUrlVal)
-            // ...
         } else {
             // Handle the case where user data is not available
         }

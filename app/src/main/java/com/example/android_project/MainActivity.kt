@@ -35,39 +35,30 @@ class MainActivity : AppCompatActivity() {
 
         auth = Firebase.auth
 
-        //
-        // MANAGE Sign Up
-        //
-
-        // hide action bar
-//        supportActionBar?.hide()
-
-        // put delay
+        // Load data from Firebase
         Handler(Looper.getMainLooper()).postDelayed({
             val user = auth.currentUser
             if (user != null) {
                 FirebaseManager.loadUserData(user.uid) { user ->
                     if (user != null) {
-                        // Store the user data for future use (e.g., in shared preferences or singleton)
+                        // Store the user data for future use in singleton)
                         UserDataManager.setUser(user)
-
-                        // Proceed with the rest of your app logic
                     } else {
-                        // Handle the case where user data couldn't be retrieved
+                        // TBA: Handle error
                     }
                 }
 
-                // if theres already an account, go to home
+                // If theres already an account, go to home
                 val intent = Intent(this, AppActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {
-                // go to sign in
+                // No user signed in... Go to Sing In
                 val intent = Intent(this, SignInActivity::class.java)
                 startActivity(intent)
                 finish()
             }
-        }, 0) // 3 seconds
+        }, 0)
 
         //
         // MANAGE App Fragments
