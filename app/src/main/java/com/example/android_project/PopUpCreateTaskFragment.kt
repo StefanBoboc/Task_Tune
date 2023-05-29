@@ -91,26 +91,50 @@ class PopUpCreateTaskFragment : DialogFragment() {
 
         btnSave?.setOnClickListener {
             if (credentialFinalChecker()) {
-                val taskKey: String? = databaseRef.push().key
-                if (taskKey != null) {
-                    val task: DayData.EventDetails = DayData.EventDetails(
-                        taskTitle?.text.toString(),
-                        taskTimeStart?.text.toString(),
-                        taskTimeEnd?.text.toString(),
-                        taskTag?.text.toString()
-                    )
-                    databaseRef.child(taskDate?.text.toString()).child(taskKey).setValue(task).addOnCompleteListener {
-                        if (it.isSuccessful) {
-                            // add new task in the day
-                            Toast.makeText(context, "Task created successfully!", Toast.LENGTH_SHORT).show()
-                            dialog?.cancel()
-                        } else {
-                            Toast.makeText(context, "Failed to create task", Toast.LENGTH_SHORT).show()
-                        }
+                val task = Task(
+                    taskTitle?.text.toString(),
+                    taskDate?.text.toString(),
+                    taskTimeStart?.text.toString(),
+                    taskTimeEnd?.text.toString(),
+                    taskTag?.text.toString()
+                )
+
+                val task1Ref = databaseRef.push()
+                task1Ref.setValue(task).addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        // add new task in the day
+                        Toast.makeText(context, "Task created successfully!", Toast.LENGTH_SHORT)
+                            .show()
+                        dialog?.cancel()
+                    } else {
+                        Toast.makeText(context, "Failed to create task", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
         }
+
+//        btnSave?.setOnClickListener {
+//            if (credentialFinalChecker()) {
+//                val taskKey: String? = databaseRef.push().key
+//                if (taskKey != null) {
+//                    val task: DayData.EventDetails = DayData.EventDetails(
+//                        taskTitle?.text.toString(),
+//                        taskTimeStart?.text.toString(),
+//                        taskTimeEnd?.text.toString(),
+//                        taskTag?.text.toString()
+//                    )
+//                    databaseRef.child(taskDate?.text.toString()).child(taskKey).setValue(task).addOnCompleteListener {
+//                        if (it.isSuccessful) {
+//                            // add new task in the day
+//                            Toast.makeText(context, "Task created successfully!", Toast.LENGTH_SHORT).show()
+//                            dialog?.cancel()
+//                        } else {
+//                            Toast.makeText(context, "Failed to create task", Toast.LENGTH_SHORT).show()
+//                        }
+//                    }
+//                }
+//            }
+//        }
 
         btnCancel?.setOnClickListener {
             dialog?.cancel()

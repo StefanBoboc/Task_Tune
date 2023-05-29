@@ -16,11 +16,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-// Abc@abc.com
-// Abc@abc1com
-
-// Abc@abcd.com
-
 class MainActivity : AppCompatActivity() {
 
     lateinit var toggle : ActionBarDrawerToggle

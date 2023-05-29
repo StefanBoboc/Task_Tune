@@ -27,11 +27,11 @@ class AppActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_app)
 
+        val navView : NavigationView = findViewById(R.id.nav_view)
+
         auth = Firebase.auth
 
         drawerLayout = findViewById(R.id.drawerLayout)
-        val navView : NavigationView = findViewById(R.id.nav_view)
-
         toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
@@ -69,6 +69,7 @@ class AppActivity : AppCompatActivity() {
         }
     }
 
+    // Performs the fragments replacement
     private fun replaceFragment(fragment: Fragment, title: String) {
         var fragmentManager = supportFragmentManager
         var fragmentTransaction = fragmentManager.beginTransaction()
