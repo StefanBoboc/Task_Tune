@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "633430876204",
+    "firebase_url": "https://tasktune-5d2eb-default-rtdb.firebaseio.com",
     "project_id": "tasktune-5d2eb",
     "storage_bucket": "tasktune-5d2eb.appspot.com"
   },
@@ -18,6 +19,43 @@
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.android_project",
+            "certificate_hash": "f1033616304a32191e7c35ca04620606097c16c4"
+          }
+        },
+        {
+          "client_id": "633430876204-olj7960nvnlohmd0codu8tu9mol57deg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjFStsZfA7Q5r_YaCo9Xfn1e9TlDITvuc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "633430876204-olj7960nvnlohmd0codu8tu9mol57deg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:633430876204:android:3993e0de0c45f1acd77189",
+        "android_client_info": {
+          "package_name": "com.example.tasktune"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "633430876204-n162ikb7gqnga1oe2ao2agll0j14urcj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tasktune",
             "certificate_hash": "f1033616304a32191e7c35ca04620606097c16c4"
           }
         },

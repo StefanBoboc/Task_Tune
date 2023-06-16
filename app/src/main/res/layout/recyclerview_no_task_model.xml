@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp"
+    android:layout_margin="15dp"
+    android:foreground="?selectableItemBackground"
+    android:clickable="true">
+
+    <LinearLayout
+        android:id="@+id/taskCardInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <View
+            android:id="@+id/taskCardPipe"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/transparent_green"
+            android:layout_weight="0.02"/>
+
+        <LinearLayout
+            android:id="@+id/taskDescriptionInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="5dp"
+            app:layout_constraintEnd_toStartOf="@+id/taskButtonsInputLayout"
+            android:gravity="center_vertical"
+            android:layout_weight="0.68">
+
+            <TextView
+                android:id="@+id/taskTitleView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="No tasks"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

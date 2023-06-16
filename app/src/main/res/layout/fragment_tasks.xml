@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
+    tools:context=".TasksFragment">
+
+    <!-- Guideline for vertical alignment -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <!-- Guideline for horizontal alignment -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/layoutSearchBar"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:padding="20dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.5"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        android:orientation="horizontal">-->
+    <!--        -->
+    <!--        <TextView-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:text="SearchBar"/>-->
+    <!--    </LinearLayout>-->
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/layoutSearchBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/search_bar_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryHint="Search here..."
+        app:iconifiedByDefault="false">
+
+    </androidx.appcompat.widget.SearchView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutSearchBar">
+
+        <!--    <androidx.recyclerview.widget.RecyclerView-->
+        <!--        android:id="@+id/recyclerView"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintHorizontal_bias="0.5"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toBottomOf="@+id/layoutSearchBar">-->
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <!-- Your other layout elements -->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green"
+        android:contentDescription="Add new task"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineHorizontal"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal"
+        app:layout_constraintEnd_toEndOf="@id/guidelineVertical"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
+        app:maxImageSize="48dp"
+        app:tint="@color/white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

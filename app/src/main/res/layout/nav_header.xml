@@ -4,36 +4,31 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_marginTop="16dp"
-    android:layout_marginStart="16dp"
-    android:background="@color/white">
-    
+    android:paddingTop="16dp"
+    android:paddingLeft="16dp"
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
+    android:id="@+id/nav_header">
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@drawable/placeholder_user_photo"/>
+        android:src="@drawable/unknown_profile"
+        android:background="@color/white"/>
 
     <TextView
+        android:id="@+id/usernameView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/user_name"
         android:paddingTop="8dp"
         android:textSize="20dp"
         android:text="User Name"
         android:textColor="@color/black"
         android:textStyle="bold"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16dp"
-        android:text="user.name@email.com"/>
-
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="16dp"
         android:background="@color/underline"/>
-        
-
 </LinearLayout>

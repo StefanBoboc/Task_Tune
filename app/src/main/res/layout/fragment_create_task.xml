@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_pop_up_edit_pass"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CreateTaskFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="5dp">
+
+            <TextView
+                android:id="@+id/newTaskView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="New Task"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="30dp"
+                android:background="@color/green"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="10sp"
+                app:layout_constraintHorizontal_bias="0.5" />
+
+            <!-- Layout 1: Title -->
+            <LinearLayout
+                android:id="@+id/taskTitleInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/taskTitleIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/baseline_title_24"
+                    android:contentDescription="Title Icon" />
+
+                <EditText
+                    android:id="@+id/taskTitleEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:hint="Enter title"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="20dp"
+                    android:background="@null"/>
+            </LinearLayout>
+
+            <!-- Layout 2: Date -->
+            <LinearLayout
+                android:id="@+id/taskDateInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/taskDateIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/baseline_calendar_month_24"
+                    android:contentDescription="Date Icon" />
+
+                <TextView
+                    android:id="@+id/taskDateView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select date"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="20dp"/>
+            </LinearLayout>
+
+            <!-- Layout 3: Time -->
+            <LinearLayout
+                android:id="@+id/taskHourInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/taskHourIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/baseline_access_time_filled_24"
+                    android:contentDescription="Time Icon" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/taskHourStartView"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.497"
+                        android:text="Start time"
+                        android:textSize="20dp"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="#c9c4c3"
+                        android:layout_weight="0.006"/>
+
+                    <TextView
+                        android:id="@+id/taskHourEndView"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.497"
+                        android:text="End time"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="20dp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Layout 4: Description -->
+            <LinearLayout
+                android:id="@+id/taskTagInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/taskTagIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/baseline_discount_24"
+                    android:contentDescription="Description Icon" />
+
+                <EditText
+                    android:id="@+id/taskTagEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:hint="Enter tag"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="20dp"
+                    android:background="@null"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnsInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:weightSum="1"
+                android:layout_marginTop="20dp">
+
+                <Button
+                    android:id="@+id/btnCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Cancel"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"/>
+
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="0dp" />
+
+                <Button
+                    android:id="@+id/btnSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Save"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

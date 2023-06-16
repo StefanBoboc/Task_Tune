@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Giving up?"
+        android:textSize="30dp"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        android:background="@color/green"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" Are you absolutely sure you want to do that? \n You will lose 25 XP"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:id="@+id/btnOk" />
+
+</LinearLayout>

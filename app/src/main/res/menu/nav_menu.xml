@@ -4,48 +4,48 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group
+        android:checkableBehavior="single">
 
-    <item
-        android:id="@+id/nav_tags"
-        android:title="Tags"
-        android:icon="@drawable/baseline_discount_24"/>
+        <item
+            android:id="@+id/nav_tasks"
+            android:title="Tasks"
+            android:icon="@drawable/baseline_task_24" />
 
-    <item
-        android:id="@+id/nav_friends"
-        android:title="Friends"
-        android:icon="@drawable/baseline_people_24"/>
+        <item
+            android:id="@+id/nav_friends"
+            android:title="Friends"
+            android:icon="@drawable/baseline_people_24"/>
 
-    <item
-        android:id="@+id/nav_achievements"
-        android:title="Achievements"
-        android:icon="@drawable/baseline_workspace_premium_24"/>
+        <item
+            android:id="@+id/nav_achievements"
+            android:title="Achievements"
+            android:icon="@drawable/baseline_workspace_premium_24"/>
 
-    <item
-        android:id="@+id/nav_statistics"
-        android:title="Statistics"
-        android:icon="@drawable/baseline_bar_chart_24"/>
+        <item
+            android:id="@+id/nav_statistics"
+            android:title="Statistics"
+            android:icon="@drawable/baseline_bar_chart_24"/>
 
-    <item
-        android:id="@+id/nav_settings"
-        android:title="Settings"
-        android:icon="@drawable/baseline_settings_24"/>
+        <item
+            android:id="@+id/nav_settings"
+            android:title="Settings"
+            android:icon="@drawable/baseline_settings_24"/>
 
-    <item
-        android:id="@+id/nav_edit_profile"
-        android:icon="@drawable/baseline_edit_24"
-        android:title="Edit Profile"/>
+        <item
+            android:id="@+id/nav_edit_profile"
+            android:icon="@drawable/baseline_edit_24"
+            android:title="Edit Profile"/>
 
-    <item
-        android:id="@+id/nav_logout"
-        android:icon="@drawable/baseline_logout_24"
-        android:title="Logout"/>
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/baseline_logout_24"
+            android:title="Logout"/>
 
-    <item
-        android:id="@+id/nav_help_feedback"
-        android:title="Help and Feedback"
-        android:icon="@drawable/baseline_question_mark_24"/>
-
+        <item
+            android:id="@+id/nav_help_feedback"
+            android:title="Help and Feedback"
+            android:icon="@drawable/baseline_question_mark_24"/>
 
     </group>
     <!--TBA. About Us sub forma de logo-->

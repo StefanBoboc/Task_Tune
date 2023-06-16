@@ -10,32 +10,33 @@
     android:layout_margin="15dp"
     android:foreground="?selectableItemBackground"
     android:clickable="true">
-    
+
     <LinearLayout
-        android:id="@+id/layoutTaskCard"
+        android:id="@+id/taskCardInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="1">
 
         <View
+            android:id="@+id/taskCardPipe"
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="#FF0000FF"
+            android:background="@color/green"
             android:layout_weight="0.02"/>
 
         <LinearLayout
-            android:id="@+id/layoutTaskDescription"
+            android:id="@+id/taskDescriptionInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_margin="5dp"
-            app:layout_constraintEnd_toStartOf="@+id/layoutTaskButtons"
+            app:layout_constraintEnd_toStartOf="@+id/taskButtonsInputLayout"
             android:gravity="center_vertical"
             android:layout_weight="0.68">
 
             <TextView
-                android:id="@+id/taskTitle"
+                android:id="@+id/taskTitleView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="DW Weekly Meeting"
@@ -43,21 +44,21 @@
                 android:textColor="@color/black"/>
 
             <TextView
-                android:id="@+id/taskTime"
+                android:id="@+id/taskHourView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="13:30 - 14:00"
                 android:textSize="18dp"/>
 
             <TextView
-                android:id="@+id/taskTag"
+                android:id="@+id/taskTagView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="#tasktag"/>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/layoutTaskButtons"
+            android:id="@+id/taskButtonsInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -69,7 +70,10 @@
                 android:id="@+id/btnStart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Start"/>
+                android:text="Start"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/green"
+                android:textAllCaps="false"/>
 
         </LinearLayout>
 

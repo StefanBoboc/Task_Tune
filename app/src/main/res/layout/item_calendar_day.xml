@@ -12,7 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
 
     <LinearLayout
         android:id="@+id/eventContainer"
